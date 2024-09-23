@@ -26,7 +26,7 @@ class FlySpeedListener implements Listener {
 				if ($this->flySpeedRefl === null) {
 					$this->flySpeedRefl = (new \ReflectionClass(AbilitiesLayer::class))->getProperty("flySpeed");
 				}
-				$speed = FlySpeedSession::get($ns)?->getFlySpeed() ?? $this->config->getDefaultSpeed();
+				$speed = FlySpeedSession::get($ns)->getFlySpeed() ?? $this->config->getDefaultSpeed();
 				foreach ($packet->getData()->getAbilityLayers() as $layer) {
 					if ($layer->getFlySpeed() !== null) {
 						$this->flySpeedRefl->setValue($layer, $speed);
