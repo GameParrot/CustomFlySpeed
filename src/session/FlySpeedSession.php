@@ -12,6 +12,7 @@ class FlySpeedSession {
 
 	public static function get(NetworkSession $session) : FlySpeedSession {
 		if (!isset(self::$sessions)) {
+			/** @var \WeakMap<NetworkSession, FlySpeedSession> */
 			$map = new \WeakMap();
 			self::$sessions = $map;
 		}
