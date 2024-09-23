@@ -1,6 +1,6 @@
 ---
 name: FlySpeed
-version: 0.0.1
+version: 1.0.0
 main: GameParrot\FlySpeed\FlySpeed
 api: 5.0.0
 src-namespace-prefix: GameParrot\FlySpeed
