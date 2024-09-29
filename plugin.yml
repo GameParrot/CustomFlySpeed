@@ -1,9 +1,9 @@
 ---
-name: FlySpeed
+name: CustomFlySpeed
 version: 1.0.0
-main: GameParrot\FlySpeed\FlySpeed
+main: GameParrot\CustomFlySpeed\FlySpeed
 api: 5.0.0
-src-namespace-prefix: GameParrot\FlySpeed
+src-namespace-prefix: GameParrot\CustomFlySpeed
 author: GameParrot
 description: Change players fly speed
 website: https://github.com/GameParrot/FlySpeed

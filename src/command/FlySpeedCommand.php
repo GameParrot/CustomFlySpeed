@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GameParrot\FlySpeed\command;
+namespace GameParrot\CustomFlySpeed\command;
 
-use GameParrot\FlySpeed\FlySpeed;
+use GameParrot\CustomFlySpeed\FlySpeed;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\utils\InvalidCommandSyntaxException;

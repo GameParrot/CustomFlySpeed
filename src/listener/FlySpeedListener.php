@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace GameParrot\FlySpeed\listener;
+namespace GameParrot\CustomFlySpeed\listener;
 
-use GameParrot\FlySpeed\config\FlySpeedConfig;
-use GameParrot\FlySpeed\session\FlySpeedSession;
+use GameParrot\CustomFlySpeed\config\FlySpeedConfig;
+use GameParrot\CustomFlySpeed\session\FlySpeedSession;
 use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketSendEvent;
 use pocketmine\network\mcpe\protocol\types\AbilitiesLayer;

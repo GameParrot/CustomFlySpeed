@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GameParrot\FlySpeed\session;
+namespace GameParrot\CustomFlySpeed\session;
 
 use pocketmine\network\mcpe\NetworkSession;
 

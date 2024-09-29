@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace GameParrot\FlySpeed;
+namespace GameParrot\CustomFlySpeed;
 
-use GameParrot\FlySpeed\command\FlySpeedCommand;
-use GameParrot\FlySpeed\config\FlySpeedConfig;
-use GameParrot\FlySpeed\listener\FlySpeedListener;
-use GameParrot\FlySpeed\session\FlySpeedSession;
+use GameParrot\CustomFlySpeed\command\FlySpeedCommand;
+use GameParrot\CustomFlySpeed\config\FlySpeedConfig;
+use GameParrot\CustomFlySpeed\listener\FlySpeedListener;
+use GameParrot\CustomFlySpeed\session\FlySpeedSession;
 use pocketmine\permission\DefaultPermissions;
 use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
