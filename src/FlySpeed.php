@@ -17,7 +17,7 @@ class FlySpeed extends PluginBase {
 		$this->saveDefaultConfig();
 		$this->conf = new FlySpeedConfig($this->getConfig());
 		$this->getServer()->getPluginManager()->registerEvents(new FlySpeedListener($this->conf), $this);
-		$this->getServer()->getCommandMap()->register("flyspeed", new FlySpeedCommand($this));
+		$this->getServer()->getCommandMap()->register("customflyspeed", new FlySpeedCommand($this));
 	}
 
 	public function getFlySpeedConfig() : FlySpeedConfig {
