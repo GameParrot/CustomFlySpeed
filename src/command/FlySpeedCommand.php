@@ -19,7 +19,7 @@ use function floatval;
 class FlySpeedCommand extends Command implements PluginOwned {
 	public function __construct(private FlySpeed $plugin) {
 		parent::__construct("flyspeed", "Set fly speed", "/setflyspeed <speed: float> [player: player]");
-		$this->setPermissions([$plugin->getFlySpeedConfig()->getSelfPerm(), $plugin->getFlySpeedConfig()->getOtherPerm()]);
+		$this->setPermissions(["customflyspeed.command.self", "customflyspeed.command.others"]);
 	}
 
 	public function getOwningPlugin() : Plugin {
@@ -46,8 +46,8 @@ class FlySpeedCommand extends Command implements PluginOwned {
 		}
 
 		if (
-			($player === $sender && !$this->testPermission($sender, $this->plugin->getFlySpeedConfig()->getSelfPerm())) ||
-			($player !== $sender && !$this->testPermission($sender, $this->plugin->getFlySpeedConfig()->getOtherPerm()))
+			($player === $sender && !$this->testPermission($sender, "customflyspeed.command.self")) ||
+			($player !== $sender && !$this->testPermission($sender, "customflyspeed.command.others"))
 		) {
 			return true;
 		}

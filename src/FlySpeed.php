@@ -8,9 +8,6 @@ use GameParrot\CustomFlySpeed\command\FlySpeedCommand;
 use GameParrot\CustomFlySpeed\config\FlySpeedConfig;
 use GameParrot\CustomFlySpeed\listener\FlySpeedListener;
 use GameParrot\CustomFlySpeed\session\FlySpeedSession;
-use pocketmine\permission\DefaultPermissions;
-use pocketmine\permission\Permission;
-use pocketmine\permission\PermissionManager;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 
@@ -20,11 +17,6 @@ class FlySpeed extends PluginBase {
 		$this->saveDefaultConfig();
 		$this->conf = new FlySpeedConfig($this->getConfig());
 		$this->getServer()->getPluginManager()->registerEvents(new FlySpeedListener($this->conf), $this);
-		$opRoot = PermissionManager::getInstance()->getPermission(DefaultPermissions::ROOT_OPERATOR);
-		PermissionManager::getInstance()->addPermission(new Permission($this->conf->getSelfPerm(), "Change your own fly speed"));
-		PermissionManager::getInstance()->addPermission(new Permission($this->conf->getOtherPerm(), "Change others fly speed"));
-		$opRoot->addChild($this->conf->getSelfPerm(), true);
-		$opRoot->addChild($this->conf->getOtherPerm(), true);
 		$this->getServer()->getCommandMap()->register("flyspeed", new FlySpeedCommand($this));
 	}
 

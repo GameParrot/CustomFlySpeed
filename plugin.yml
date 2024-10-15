@@ -6,5 +6,13 @@ api: 5.0.0
 src-namespace-prefix: GameParrot\CustomFlySpeed
 author: GameParrot
 description: Change players fly speed
-website: https://github.com/GameParrot/FlySpeed
+website: https://github.com/GameParrot/CustomFlySpeed
+
+permissions:
+  customflyspeed.command.self:
+    description: Change your own fly speed
+    default: op
+  customflyspeed.command.others:
+    description: Change others fly speed
+    default: op
 ...

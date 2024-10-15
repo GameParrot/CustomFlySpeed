@@ -1,8 +1,2 @@
-# Permission to change your own fly speed
-self-perm: "flyspeed.command.self"
-
-# Permission to change other players fly speed
-other-perm: "flyspeed.command.others"
-
 # Default fly speed
 default-fly-speed: 0.05
