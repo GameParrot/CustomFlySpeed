@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace GameParrot\CustomFlySpeed\session;
 
 use pocketmine\network\mcpe\NetworkSession;
+use WeakReference;
 
 class FlySpeedSession {
 	/** @var \WeakMap<NetworkSession, FlySpeedSession> */
@@ -19,10 +20,11 @@ class FlySpeedSession {
 		return self::$sessions[$session] ??= new self($session);
 	}
 
-	private NetworkSession $ns;
+	/** @var WeakReference<NetworkSession> */
+	private WeakReference $ns;
 	private ?float $flySpeed = null;
 	public function __construct(NetworkSession $session) {
-		$this->ns = $session;
+		$this->ns = WeakReference::create($session);
 	}
 
 	public function getFlySpeed() : ?float {
@@ -30,10 +32,11 @@ class FlySpeedSession {
 	}
 
 	public function setFlySpeed(?float $flySpeed) : void {
-		if ($this->ns->getPlayer() === null) {
+		$session = $this->ns->get();
+		if ($session === null || $session->getPlayer() === null) {
 			return;
 		}
 		$this->flySpeed = $flySpeed;
-		$this->ns->syncAbilities($this->ns->getPlayer());
+		$session->syncAbilities($session->getPlayer());
 	}
 }
